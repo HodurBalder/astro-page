@@ -1,0 +1,28 @@
+---
+interface Props {
+	title?: string
+}
+const {title = ''} = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/images/adrian.jpg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Adrián Rodríguez | {title}</title>
+	</head>
+	<body>
+		<slot/>
+	</body>
+</html>
+
+<style>
+	
+	body{
+		background: rgb(2,0,36);
+		background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+	}
+
+</style>

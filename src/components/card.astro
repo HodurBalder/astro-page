@@ -1,0 +1,51 @@
+---
+interface Props {
+    href?: string
+    src?: string
+    alt?: string
+    title?: string
+}
+
+const {href = '', src = '', alt = '', title = '',} = Astro.props
+
+---
+
+<div class='card-image'>
+    <a class={title === '' ? '' : 'scuare-image'} href={href} target="_blank">
+        <img class={title === '' ? 'circular-image' : ''} loading="lazy" class="" src={src} alt={alt}> 
+        {
+            title !== '' 
+            ? <h3 class="text-center">{title}</h3>
+            : ''
+        }
+    </a>
+</div>
+
+<style>
+
+    .card-image {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-self: center;
+    }
+
+    .circular-image {
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .scuare-image {
+        width: 80%;
+    }
+
+    .text-center{
+        text-align: center;
+        color: #c1e0f7;
+    }
+
+</style>

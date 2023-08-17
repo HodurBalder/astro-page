@@ -1,15 +1,80 @@
 ---
+import Layout from '../components/layout.astro'
+import Card from '../components/card.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Links">
+	<header>
+		<Card href="/" src="/images/adrian.jpg" alt="Adrian Rodriguez" />
+		<h1 class="text-center">Adrián Rodríguez Mejía</h1>
+		<p class="text-center">With 3 years of experience, I'm a passionate Full Stack Developer dedicated to crafting innovative solutions. I consistently seek challenging opportunities that unleash my potential, always with an eye on the technological future.</p>
+	</header>
+	<main>
+
+		<h2>PERSONAL LINKS</h2>
+
+		<div class="container-icons">
+			<Card href="mailto:hodurbalder@gmail.com" src="/svgs/email.svg" alt="Email" title="Email" />
+			<Card href="https://www.facebook.com/hodur.balder" src="/svgs/facebook.svg" alt="Facebook" title="Facebook" />
+			<Card href="https://www.instagram.com/adrian.rodriguez.dev" src="/svgs/instagram.svg" alt="Instagram" title="Instagram" />
+			<Card href="https://open.spotify.com/user/12132520307" src="/svgs/spotify.svg" alt="Spotify" title="Spotify" />
+			<Card href="https://api.whatsapp.com/send?phone=522223129358" src="/svgs/whatsapp.svg" alt="WhatsApp" title="WhatsApp" />
+			<Card href="https://t.me/AdrianDev01" src="/svgs/telegram.svg" alt="Telegram" title="Telegram" />
+		</div>
+
+		<h2>PROFESIONAL LINKS</h2>
+		
+		<div class="container-icons">
+			<Card href="https://www.linkedin.com/in/adrian-rodriguez-developer" src="/svgs/linkedin.svg" alt="LinkedIn" title="LinkedIn" />
+			<Card href="https://github.com/HodurBalder" src="/svgs/github.svg" alt="GitHub" title="GitHub" />
+		</div>
+
+	</main>	
+
+	<footer>
+		<p class="text-center">Created by Adrián Rodríguez Mejía | Full Stack Developer</p>
+	</footer>
+	
+</Layout>
+
+<style>
+	
+	main{
+		margin: 10%;
+	}
+	.text-center{
+		text-align: center;
+		color: #c1e0f7;
+	}
+
+	header {
+		margin: 5% 20%;
+		display: grid;
+		grid-template-rows: auto;
+		justify-content: center;
+		align-content: center;
+		gap: 10px;
+	}
+
+	.container-icons {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 10px;
+		justify-content: center;
+		align-content: center;
+	}
+
+	@media (max-width: 1024px) {	
+		.container-icons {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		header{
+			margin: 5%;
+		}
+	}
+
+	footer{
+		color: #c1e0f7;
+	}
+</style>
