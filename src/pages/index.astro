@@ -14,7 +14,7 @@ import Card from '../components/card.astro'
 		<h2>PERSONAL LINKS</h2>
 
 		<div class="container-icons">
-			<Card href="mailto:hodurbalder@gmail.com" src="/svgs/email.svg" alt="Email" title="Email" />
+			<Card href="mailto:hodurbalder@gmail.com" src="/svgs/email.svg" alt="Email" title="Email" eventClick="dataLayer.push({'clickEmail': 'click'});"/>
 			<Card href="https://www.facebook.com/hodur.balder" src="/svgs/facebook.svg" alt="Facebook" title="Facebook" />
 			<Card href="https://www.instagram.com/adrian.rodriguez.dev" src="/svgs/instagram.svg" alt="Instagram" title="Instagram" />
 			<Card href="https://open.spotify.com/user/12132520307" src="/svgs/spotify.svg" alt="Spotify" title="Spotify" />

@@ -4,14 +4,15 @@ interface Props {
     src?: string
     alt?: string
     title?: string
+    eventClick?: string
 }
 
-const {href = '', src = '', alt = '', title = '',} = Astro.props
+const {href = '', src = '', alt = '', title = '', eventClick = ''} = Astro.props
 
 ---
 
 <div class='card-image'>
-    <a class={title === '' ? '' : 'scuare-image'} href={href} target="_blank">
+    <a class={title === '' ? '' : 'scuare-image'} href={href} target="_blank" onclick={eventClick}>
         <img class={title === '' ? 'circular-image' : ''} loading="lazy" class="" src={src} alt={alt}> 
         {
             title !== '' 
