@@ -1,6 +1,7 @@
 ---
 import Layout from '../components/layout.astro'
 import Card from '../components/card.astro'
+const vCardPath = '../components/myContact.vcfnp';
 ---
 
 <Layout title="Links">
@@ -8,6 +9,8 @@ import Card from '../components/card.astro'
 		<Card href="/" src="/images/adrian.jpg" alt="Adrian Rodriguez" />
 		<h1 class="text-center">Adrián Rodríguez Mejía</h1>
 		<p class="text-center">With 3 years of experience, I'm a passionate Full Stack Developer dedicated to crafting innovative solutions. I consistently seek challenging opportunities that unleash my potential, always with an eye on the technological future.</p>
+		<a class="text-center download-button" href={vCardPath} download="MiTarjeta.vcf">Descarga mi informacion de contacto</a>
+
 	</header>
 	<main>
 
@@ -38,6 +41,20 @@ import Card from '../components/card.astro'
 </Layout>
 
 <style>
+
+	.download-button {
+		width: 20%;
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: blue;
+		color: white;
+		text-decoration: none;
+		border-radius: 5px;
+	}
+
+	.download-button:hover {
+		background-color: darkblue;
+	}
 	
 	main{
 		margin: 10%;
