@@ -1,0 +1,82 @@
+---
+interface AuthorCardProps {
+    authorData: {
+        name: string;
+        books: {
+        name: string;
+        year: string;
+        publisher: string;
+        }[];
+    };
+}
+
+const { authorData } = Astro.props as AuthorCardProps;
+---
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="text-center">{authorData.name}</h3>
+    </div>
+    <div class="card-body">
+        <ul>
+        {authorData.books.map((book, index) => (
+            <li>
+                <h4>{book.name}</h4>
+                <p>Fecha de Publicación: {book.year}</p>
+                <p>Editorial: {book.publisher}</p>
+            </li>
+        ))}
+        </ul>
+    </div>
+</div>
+
+<style>
+
+.card {
+  background-color: rgba(0,44,94,0.5); /* Gris con transparencia */
+  border-radius: 8px;
+  padding: 20px;
+  color: white; /* Letras blancas */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid transparent; /* Contorno transparente por defecto */
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #3c00ff; /* Contorno rojo al pasar el mouse o en foco */
+}
+
+
+  /* Estilos para el contenido interno de la card */
+  .card-header {
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.05); /* Gris con transparencia */
+    /* ... */
+  }
+
+
+  .card-body {
+    padding: 15px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+  }
+
+  h4 {
+    margin: 0;
+    color: #c1e0f7;
+  }
+
+</style>
